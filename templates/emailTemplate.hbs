@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Email</title>
+  </head>
+  <body>
+    <p>Dear {{name}},</p>
+
+    <p>Greetings from Ujjwal Finserv Private Limited.</p>
+
+    {{#if isPaid}}
+      <p>Your payment for {{type}} has been received successfully.</p>
+      <p>This is to confirm we received ₹{{feeAmount}}
+        towards your
+        {{type}}
+        fees for loan application
+        {{applicationNo}}.</p>
+      <p>Please find the attached paid {{type}} invoice for your reference.</p>
+    {{else}}
+      <p>Your loan application
+        <strong>{{applicationNo}}</strong>
+        for Personal Loan of ₹{{amount}}
+        has been approved.</p>
+      <p>Your interest rate is
+        <strong>{{interestRate}}%</strong>
+        per annum and EMI is ₹{{emi}}
+        for a tenure of
+        {{tenure}}
+        months.</p>
+      <p>Please find your
+        {{type}}
+        letter attached. Kindly pay the
+        {{type}}
+        fee of ₹{{feeAmount}}.</p>
+    {{/if}}
+
+    <p>Thank you for choosing Ujjwal Finserv.</p>
+
+    <br />
+    <p>Regards,</p>
+    <p>Ujjwal Finserv<br />
+      Loan Specialist<br />
+      +91-{{employeePhone}}<br />
+      Email: info@testmail.com<br />
+      Website: https://papayawhip-woodcock-558791.hostingersite.com/<br />
+      Office: test address</p>
+  </body>
+</html>

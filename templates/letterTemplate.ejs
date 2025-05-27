@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+    }
+    .details {
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+    .status {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1><%= type %> Letter</h1>
+  <p>Dear <strong><%= name %></strong>,</p>
+
+  <p>
+    Greetings from <strong>Ujjwal Finserv Private Limited</strong>!<br />
+    Your loan application <strong><%= applicationNo %></strong> for ₹<%= amount %> has been approved.
+  </p>
+
+  <div class="details">
+    <p><strong>Loan Details:</strong></p>
+    <ul>
+      <li>Interest Rate: <%= interestRate %>%</li>
+      <li>Tenure: <%= tenure %> months</li>
+      <li>EMI: ₹<%= emi %></li>
+    </ul>
+    <p><strong><%= type %> Fee:</strong> ₹<%= feeAmount %></p>
+
+    <!-- ✅ Status block (Paid/Unpaid) -->
+    <div class="status">
+      <% if (isPaid) { %>
+        <span style="color: green;">✅ PAID</span><br />
+        Payment of ₹<%= feeAmount %> has been received for your <%= type %>.
+      <% } else { %>
+        <span style="color: red;">❌ UNPAID</span><br />
+        Please pay ₹<%= feeAmount %> to proceed with your <%= type %>.
+      <% } %>
+    </div>
+  </div>
+
+  <div class="footer">
+    Regards,<br />
+    <strong>Ujjwal Finserv</strong><br />
+    Loan Specialist: <%= employeePhone %>
+  </div>
+</body>
+</html>
