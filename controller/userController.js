@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const jwt = require('jsonwebtoken');
 const secretKey = process.env.JWT_SECRET_KEY || 'yoursecretKey';
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const moment = require('moment');
 const {
   User,
